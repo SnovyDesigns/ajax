@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400');
+@import 'reset';
+
+html {
+	font-size: 10px;
+}
+
+body {
+	background-color: #00aced;
+	color: #fff;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'PT Sans';
+}
+
+main {
+	height: 30rem;
+	text-align: center;
+}
+
+h1 {
+	font-size: 5rem;
+	margin-bottom: 5rem;
+}
+
+.quote {
+	font-size: 2.6rem;
+	margin-bottom: 2rem;
+}
+
+.author {
+	font-size: 2.4rem;
+	margin-bottom: 5rem;
+}
+
+.buttons {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	max-width: 30rem;
+	margin: 0 auto;
+}
+
+button, a {
+	display: block;
+	width: 30rem;
+	background-color: transparent;
+	font-size: 2.2rem;
+	color: #fff;
+	border: 2px solid #fff;
+	padding: 1.5rem 0;
+	border-radius: 8px;
+	transition: all .4s;
+	cursor: pointer;
+
+	&:hover {
+		background-color: #fff;
+		color: #0084b4;
+	}	 
+}
+
+button {
+	margin-bottom: 2rem;
+}
