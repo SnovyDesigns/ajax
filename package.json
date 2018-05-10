@@ -1,0 +1,50 @@
+{
+  "name": "npm-start",
+  "version": "1.0.0",
+  "description": "https://github.com/SnovyDesigns/ajax.git",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm-run-all test:*",
+    "test:html": "nu-html-checker *.html",
+    "test:js": "jshint js/",
+    "init-project": "npm-run-all init-project:*",
+    "init-project:clean": "rm -rf .git css images js sass",
+    "init-project:dirs": "mkdir -p css sass js images",
+    "init-project:files": "touch README.md index.html css/style.css sass/style.scss js/scripts.js",
+    "init-project:git": "git init",
+    "init-project:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "build": "npm-run-all build:* test",
+    "build:clean": "rm -rf css",
+    "build:sass": "node-sass --output-style compact -o css sass",
+    "build:autoprefixer": "autoprefixer-cli css/style.css",
+    "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
+    "watch": "npm-run-all build --parallel watch:* ",
+    "watch:sassprefixer": "onchange sass/style*.scss -- npm-run-all sass autoprefixer",
+    "sass": "node-sass --output-style expanded --source-map true -o css sass",
+    "autoprefixer": "autoprefixer-cli css/style*.css",
+    "watch:browsersync": "browser-sync start --server --files 'css/*.css' 'js/*.js' '*.html'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer-cli": "^1.0.0",
+    "browser-sync": "^2.23.6",
+    "node-sass": "^4.8.3",
+    "npm-run-all": "^4.1.2",
+    "nu-html-checker": "^0.1.0",
+    "onchange": "^3.3.0",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "jshint": "^2.9.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SnovyDesigns/ajax.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SnovyDesigns/ajax.git/issues"
+  },
+  "homepage": "https://github.com/SnovyDesigns/ajax.git#readme"
+}
